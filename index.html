@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real Retro Tamagotchi</title>
+    <link rel="stylesheet" href="./src/styles.css">
+  </head>
+  <body>
+    <main class="app" aria-label="Real Retro Tamagotchi game">
+      <section class="device" aria-label="Tamagotchi handheld">
+        <span class="shell-screw shell-screw-a" aria-hidden="true"></span>
+        <span class="shell-screw shell-screw-b" aria-hidden="true"></span>
+        <span class="lanyard-slot" aria-hidden="true"></span>
+        <div class="brand-row">
+          <span class="brand-mark">PXL-PET 97</span>
+          <span class="model-badge">V2</span>
+          <span class="status-light" id="statusLight" aria-hidden="true"></span>
+        </div>
+
+        <div class="screen-bezel">
+          <span class="screen-label screen-label-left" aria-hidden="true">CARE</span>
+          <span class="screen-label screen-label-right" aria-hidden="true">METER</span>
+          <canvas id="screen" width="100" height="60" aria-label="LCD pet screen"></canvas>
+          <form class="start-panel" id="startPanel" autocomplete="off">
+            <label for="petName">Name tag</label>
+            <div class="start-row">
+              <input id="petName" name="petName" maxlength="10" value="Pixel" aria-label="Pet name">
+              <button type="submit">OK</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="hardware">
+          <div class="dpad" aria-label="Menu navigation">
+            <button type="button" class="dpad-button dpad-left" data-nav="left" aria-label="Previous action"></button>
+            <button type="button" class="dpad-button dpad-center" data-nav="select" aria-label="Select action"></button>
+            <button type="button" class="dpad-button dpad-right" data-nav="right" aria-label="Next action"></button>
+          </div>
+
+          <div class="speaker" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="action-grid" aria-label="Care actions">
+          <button type="button" data-action="feed">Meal</button>
+          <button type="button" data-action="play">Game</button>
+          <button type="button" data-action="clean">Bath</button>
+          <button type="button" data-action="sleep">Lamp</button>
+          <button type="button" data-action="medicine">Dose</button>
+          <button type="button" data-action="status">Meter</button>
+        </div>
+        <p class="serial" aria-hidden="true">NO. 04-1997 / BEEP UNIT</p>
+      </section>
+
+      <aside class="desk-panel" aria-label="Pet log">
+        <div>
+          <p class="tiny-label">Keeper tag</p>
+          <h1 id="petTitle">No egg loaded</h1>
+        </div>
+        <p class="desk-note">Keep it fed, rested, washed. It remembers the time.</p>
+        <div class="log" id="careLog" aria-live="polite"></div>
+        <button type="button" class="reset-button" id="resetButton">Reset egg</button>
+      </aside>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
